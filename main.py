@@ -4,8 +4,8 @@ import responses as R
 from telegram.ext import Updater, CommandHandler, CallbackContext
 
 def start_command(update, context):
-    line = "Hey, DSA bootcamp is going to start from 1st of June, \n for registrationfill the form https://forms.gle/BHbAqkCnAViVkeF76 "
-    update.message.reply_text(line)
+    
+    update.message.reply_text("Hey, DSA bootcamp is going to start from 1st of June, \n for registrationfill the form https://forms.gle/BHbAqkCnAViVkeF76 ")
 
 def handle_message(update, context):
     text = str(update.message.text).lower()
@@ -22,7 +22,7 @@ def main():
 
     dp.add_handler(CommandHandler("start", start_command))
 
-    updater.start_polling(0)
+    updater.start_polling()
     updater.idle()
 
 main()
