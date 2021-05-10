@@ -5,46 +5,91 @@ from telegram.ext import Updater, CommandHandler, CallbackContext
 
 def start_command(update, context):
     
-    update.message.reply_text("Hey, DSA bootcamp is going to start from 1st of June, \n for registrationfill the form https://forms.gle/BHbAqkCnAViVkeF76 ")
+    update.message.reply_text(""" https://forms.gle/BHbAqkCnAViVkeF76 \n
+
+So, Finally wait is over 🎉Codeflow is going to organize 4 weeks of DSA Bootcamp for the students 👩‍🎓 to bridge  the gap between knowledge and practical implemenation 🎓 caused due to pandemic   by providing mentorship 🥳🥳 from experts to students willing to learn and grow with the community. 
+
+💯📌\n \n
+Join telegram to be part of it: https://lnkd.in/dkBEsNS \n
+
+
+Stay tuned for more updates !\n
+Perks:  \n
+1. Mentorship for 4 weeks \n
+2. DSA contest at end of the program \n
+3. Goodies to top 5 in coding competition  \n
+4. More (based on collaborations) 🙌 \n """)
 
 def anyupdate_command(update, context):
     
-    update.message.reply_text("""Currently we are going to organise the 4 week bootcamp \n
-    \n
-     We will be starting bootcamp from 1st june, shortly will be updating you with the whole Schedule
-     \n if any community wants to collaborate could dm any of the admin of the group :)     
+    update.message.reply_text("""Schedule For DSA bootcamp🌟🌟🌟: \n 
+1.) 1 June   Introduction To boot camp, space and time complexity \n
+
+2.) 3 June Strings and Array \n
+3.) 5 June Bit manipulation, Mathematics \n
+4.) 7 June Recursion and greedy \n
+5.) 9 June Searching and sorting \n
+6.) 11 June Linked List, Stack, Queue Deque \n
+7.) 13 June Tree , BST \n
+8.) 15 June Graph \n
+9.) 17 June Graph \n
+10.) 19 June Graph \n
+11.) 21 June Disjoint Set \n
+12.) 23 June Heap and priority queues \n
+13.) 25 June Backtracking \n
+14.) 27 June Dynamic programming \n
+15.) 29 June Dynamic programming  \n   
+
+📌📌 Coding contest on 30 June,2021 \n 
+
      """)
 
 def codeflow(update, context):
     
     update.message.reply_text("""
-        Codeflow is a students driven organization running for students empowerment \n
+        Codeflow 😊 is a students driven organization running for students empowerment 🤗\n
         We are currently working in three domains: \n
-        1. Open-Source \n
-        2. Content Delivery \n
-        3. Community building and networking \n
+        🌟 Open-Source ( https://github.com/codeflow201 )\n
+        🌟 Worksops and webinars from industry experts ( https://www.youtube.com/c/codefloworg ) \n
+        🌟 Community building ( https://www.linkedin.com/company/codefloworg ) \n
         \n 
-        We belive in strengthening the skills of each other while learning in community.
+        We belive in strengthening the skills of each other while learning in community🤗.
 
      """)
 def Welcome(update, context):
     
     update.message.reply_text("""
-        Thanks for calling bot: let me know How can I help you \n
+        Thanks for calling bot🤗: let me know How can I help you \n
         
         Here is what can I do and How?\n
-        /codeflow   to know about codeflow\n
-        /dsaform    to get regestration form DSA bootcamp\n
-        /update     to know about updates\n
-        /handles    to get the link of all codeflow handles\n
+        /codeflow    to know about codeflow\n
+        /dsaform     to get regestration form DSA bootcamp\n
+        /update      to know about updates\n
+        /handles     to get the link of all codeflow handles\n
+        /motivation  to be happy withh codeflow family
      """)
 
 def handles(update, context):
     
     update.message.reply_text("""
-        You can find all the links of codeflow here: \n
-        https://linktr.ee/codefloworg
+        
+    🌟Youtube  : https://www.youtube.com/c/codefloworg \n
+    🌟Linkedin : https://www.linkedin.com/company/codefloworg \n
+    🌟Telegram : https://t.me/joinchat/FdJhyMumJK5sryCv \n
+    🌟GitHub   : https://github.com/codeflow201 \n
+    🌟Instagram: https://www.instagram.com/codefloworg \n
+    🌟Twitter  : https://twitter.com/codefloworg \n
+    \n
+    🤗You can find all the links of codeflow here🤗: \n
+        https://linktr.ee/codefloworg \n
+
      """)
+
+def motivation(update, context):
+    update.message.reply_text(""" 🤸🏻‍♂️ अपना हर दिन ऐसे जियो, जैसे की आखरी हो \n
+जियो तोह इस पल ऐसे जियो, जैसे की आखरी हो \n
+अपना हर दिन ऐसे जियो, जैसे की आखरी हो \n
+जियो तोह इस पल ऐसे जियो, जैसे की आखरी हो 🤸🏻‍♂️""")
 
 def handle_message(update, context):
     text = str(update.message.text).lower()
@@ -63,6 +108,7 @@ def main():
     dp.add_handler(CommandHandler("codeflow", codeflow))
     dp.add_handler(CommandHandler("update", anyupdate_command))
     dp.add_handler(CommandHandler("dsaform", start_command))
+    dp.add_handler(CommandHandler("motivation", motivation))
     dp.add_handler(CommandHandler("handles", handles))
 
     updater.start_polling()
