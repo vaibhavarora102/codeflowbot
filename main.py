@@ -21,6 +21,26 @@ Perks:  \n
 4. More (based on collaborations) 🙌 \n """)
 
 def anyupdate_command(update, context):
+    update.message.reply_text("""
+    📌 Schedule is updated, Do check it out by using /schedule \n
+    📌 Cash prizes and more goodies are introduced during Bootcamp\n
+    📌 Whole Bootcamp will be in the form of Live lectures of Codeflow youtube channel 
+    ( https://www.youtube.com/c/codefloworg )\n
+    📌 Live lectures will have the duration of 2 hours (approx) each\n
+    📌 Most of the lectures are Scheduled from 7 p.m to 9 p.m (it may vary acc. to mentor)\n  
+    """)
+
+def group_command(update, context):
+    update.message.reply_text("""
+    📌 To make your experience even more better, we welcome your suggestion (in nicely presented way)\n
+    📌 Don't ask same questions again and again\n
+    📌 Be helpful in group (try to help each other, as this is what we call community)\n
+    📌 Dont promote any paid resource, campus ambassador stuff and irrelevant material\n
+    📌 Be respectful to each other and humble
+    """)
+
+
+def schedule_command(update, context):
     
     update.message.reply_text("""Schedule For DSA bootcamp🌟🌟🌟: \n 
 1.) 1 June   Introduction To boot camp, space and time complexity \n
@@ -30,17 +50,20 @@ def anyupdate_command(update, context):
 4.) 7 June Recursion and greedy \n
 5.) 9 June Searching and sorting \n
 6.) 11 June Linked List, Stack, Queue Deque \n
-7.) 13 June Tree , BST \n
-8.) 15 June Graph \n
+7.) 13 June Trees\n
+-📌📌 Codeflow Ninjas (coding contest) on 14 June\n
+8.) 15 June Hashing \n
+---    Internship Preparation Webinar on 16 June\n
 9.) 17 June Graph \n
 10.) 19 June Graph \n
+---    Interview Prep Webinar on 20 June\n
 11.) 21 June Disjoint Set \n
 12.) 23 June Heap and priority queues \n
 13.) 25 June Backtracking \n
 14.) 27 June Dynamic programming \n
 15.) 29 June Dynamic programming  \n   
 
-📌📌 Coding contest on 30 June,2021 \n 
+📌📌 Codeflow Endgame on 30 June,2021 \n 
 
      """)
 
@@ -64,6 +87,8 @@ def Welcome(update, context):
         Here is what can I do and How?\n
         /codeflow    to know about codeflow\n
         /dsaform     to get regestration form DSA bootcamp\n
+        /schedule    to know about schedule\n
+        /group       to know about codeflow telegram instructions\n
         /update      to know about updates\n
         /handles     to get the link of all codeflow handles\n
         /motivation  to be happy withh codeflow family
@@ -107,6 +132,8 @@ def main():
     dp.add_handler(CommandHandler("start", Welcome))
     dp.add_handler(CommandHandler("codeflow", codeflow))
     dp.add_handler(CommandHandler("update", anyupdate_command))
+    dp.add_handler(CommandHandler("schedule", schedule_command))
+    dp.add_handler(CommandHandler("group", group_command))
     dp.add_handler(CommandHandler("dsaform", start_command))
     dp.add_handler(CommandHandler("motivation", motivation))
     dp.add_handler(CommandHandler("handles", handles))
